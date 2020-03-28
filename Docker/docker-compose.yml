@@ -1,0 +1,21 @@
+version: '2'
+services:
+  neo4j:
+    image: neo4j:3.5.14
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    ulimits:
+      nofile:
+        soft: 40000
+        hard: 40000    
+  php:
+    build:
+      context: ../
+      dockerfile: ./Docker/PHP/PHP-Dockerfile
+    volumes:
+      - "../app:/var/www/html/app"
+    depends_on:
+      - neo4j
+    ports:
+      - "8888:8888"
