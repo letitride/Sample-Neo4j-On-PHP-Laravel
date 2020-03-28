@@ -1,5 +1,5 @@
 {
   "require": {
-      "neoxygen/neoclient": "^3.3"
+    "everyman/neo4jphp": "dev-master"
   }
 }

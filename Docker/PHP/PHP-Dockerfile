@@ -5,6 +5,6 @@ RUN apt-get update \
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 RUN docker-php-ext-install zip
 
-WORKDIR /var/www/html/app
-COPY app/ /var/www/html/app
+WORKDIR /var/www/html
+COPY app/composer.json /var/www/html/
 RUN composer install
