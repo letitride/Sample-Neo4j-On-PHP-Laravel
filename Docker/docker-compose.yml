@@ -14,7 +14,7 @@ services:
       context: ../
       dockerfile: ./Docker/PHP/PHP-Dockerfile
     volumes:
-      - ../app:/app
+      - ../app:/app/neo4j
     depends_on:
       - neo4j
     ports:
